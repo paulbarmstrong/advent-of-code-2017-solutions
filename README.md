@@ -8,7 +8,9 @@
 
 ## Description
 
-With this project I tackle the *Advent Of Code 2017* coding problems in a linux environment. I plan to solve each problem with Python, Java, and C/C++.
+The [Advent Of Code 2017](https://adventofcode.com/2017) is a series of coding problems in the form of a calendar. Each day of the calendar contains a problem with two parts.
+
+With this project I tackle these coding problems in a linux environment. I plan to solve each problem with Python, Java, and C/C++.
 
 ## Motivations
 
