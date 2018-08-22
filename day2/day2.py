@@ -8,7 +8,8 @@ def part_one(rows):
 	for row in rows:
 		check_sum += max(row) - min(row)
 	return check_sum
-			
+
+
 def part_two(rows):
 	# Find the even_div_sum by adding the division of the one divisible combination
 	even_div_sum = 0
@@ -32,7 +33,8 @@ def main():
 	print("Part one: ", part_one(rows.copy()))
 	print("Part two: ", part_two(rows.copy()))
 
-class Day1Tests(unittest.TestCase):
+
+class Day2Tests(unittest.TestCase):
 	def test_part_one(self):
 		inputs = [[[5,1,9,5],[7,5,3],[2,4,6,8]]]
 		outputs = [18]
@@ -49,3 +51,4 @@ class Day1Tests(unittest.TestCase):
 if (__name__ == "__main__"):
 	main()
 	unittest.main()
+

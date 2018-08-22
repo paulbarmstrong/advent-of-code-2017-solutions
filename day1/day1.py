@@ -26,13 +26,13 @@ def main():
 
 	# Fill nums with all of the numbers in the input
 	nums = []
-	for line in input:
-		for ch in line.strip('\n'):
-			nums.append(int(ch))
+	for ch in input.readline().strip('\n'):
+		nums.append(int(ch))
 
 	# Print the results
 	print("Part one: ", part_one(nums.copy()))
 	print("Part two: ", part_two(nums.copy()))
+
 
 class Day1Tests(unittest.TestCase):
 	def test_part_one(self):
@@ -47,7 +47,8 @@ class Day1Tests(unittest.TestCase):
 		for i in range(0, len(inputs)):
 			self.assertEqual(outputs[i], part_two(inputs[i]))
 
-	
+
 if (__name__ == "__main__"):
 	main()
 	unittest.main()
+
