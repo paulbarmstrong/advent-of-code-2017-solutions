@@ -4,13 +4,13 @@
 
 * Author: Paul Armstrong
 * Date: August 2018
-* Progress: 2%
+* Progress: 3%
 
 ## Description
 
 The [Advent Of Code 2017](https://adventofcode.com/2017) is a series of coding problems in the form of a calendar. Each day of the calendar contains a problem with two parts.
 
-With this project I tackle these coding problems in a linux environment. I plan to solve each problem with Python, Java, and C/C++.
+With this project I tackle these coding problems in a linux environment. I plan to solve each problem with Python, Java, and C++11.
 
 ## Motivations
 

@@ -66,17 +66,17 @@ public class Day1Tests {
 		public TestSequence() {
 			numPassed = 0;
 			numFailed = 0;
-			test_str = "==========================\n";
+			test_str = "";
 		}
 		
 		// Prints test info and resets object variables
 		public void printTestResults() {
-			test_str += "\nTEST RESULTS - Passed: "+numPassed+", Failed: "+numFailed+"\n==========================";
+			test_str += "TEST RESULTS - Passed: "+numPassed+", Failed: "+numFailed;
 			System.out.println(test_str);
 
 			numPassed = 0;
 			numFailed = 0;
-			test_str = "==========================\n";
+			test_str = "";
 		}
 
 		// Compare the result with the expected and modify object variables accordingly
