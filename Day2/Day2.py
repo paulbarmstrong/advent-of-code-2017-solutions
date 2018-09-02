@@ -2,22 +2,26 @@ import unittest
 
 # Paul Armstrong
 
+# Finds the check_sum by adding difference between max and min in each row
 def part_one(rows):
-	# Find the check_sum by adding difference between max and min in each row
+
 	check_sum = 0
 	for row in rows:
 		check_sum += max(row) - min(row)
 	return check_sum
 
 
+# Finds the even_div_sum by adding the division of the one divisible combination
 def part_two(rows):
-	# Find the even_div_sum by adding the division of the one divisible combination
 	even_div_sum = 0
+
 	for row in rows:
+		# Go through all combinations of i and j to find the ones which divide
 		for i in range(0, len(row)):
 			for j in range(0, len(row)):
 				if i != j and row[i] % row[j] == 0:
 					even_div_sum += row[i] // row[j]
+
 	return even_div_sum
 
 
