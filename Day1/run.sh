@@ -13,6 +13,6 @@ python3 Day1.py
 
 echo -e "__________________________________"
 echo -e "JAVA:\n"
-javac Day1Tests.java && java Day1Tests
+javac Day1Tests.java && java Day1Tests && rm *.class
 
 echo -e

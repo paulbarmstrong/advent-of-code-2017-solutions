@@ -2,29 +2,22 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.lang.StringBuilder;
+import java.util.ArrayList;
 
 /**
  * @author Paul Armstrong
  * 
- * This class tests the Day1 functions partOne and partTwo
+ * This class tests the Day2 functions partOne and partTwo
  */
 
-public class Day1Tests {
+public class Day2Tests {
 
 	public static void main(String[] args) {
 
 		// Run tests on both parts, then run them with the file input
-		TestSequence tests = (new Day1Tests()).new TestSequence();
-		tests.performTest(Day1.partOne(new int[] {1,1,2,2}), 3);
-		tests.performTest(Day1.partOne(new int[] {1,1,1,1}), 4);
-		tests.performTest(Day1.partOne(new int[] {1,2,3,4}), 0);
-		tests.performTest(Day1.partOne(new int[] {9,1,2,1,2,1,2,9}), 9);
-
-		tests.performTest(Day1.partTwo(new int[] {1,2,1,2}), 6);
-		tests.performTest(Day1.partTwo(new int[] {1,2,2,1}), 0);
-		tests.performTest(Day1.partTwo(new int[] {1,2,3,4,2,5}), 4);
-		tests.performTest(Day1.partTwo(new int[] {1,2,3,1,2,3}), 12);
-		tests.performTest(Day1.partTwo(new int[] {1,2,1,3,1,4,1,5}), 4);
+		TestSequence tests = (new Day2Tests()).new TestSequence();
+		tests.performTest(Day2.partOne(new int[][] {{5,1,9,5},{7,5,3},{2,4,6,8}}), 18);
+		tests.performTest(Day2.partTwo(new int[][] {{5,9,2,8},{9,4,7,3},{3,8,6,5}}), 9);
 
 		tests.printTestResults();
 		printInputFileResults();
@@ -32,26 +25,31 @@ public class Day1Tests {
 
 	// This function will run the solutions with the input file
 	private static void printInputFileResults() {
-		StringBuilder str = new StringBuilder();
+		ArrayList<String> lines = new ArrayList<String>();
 
-		// Read the file and put it in an array
+		// Read the whole file into an ArrayList
 		try {
 			Scanner scanner = new Scanner(new File("input.txt"));
-			while (scanner.hasNext()) {
-				str.append(scanner.next());
+			while (scanner.hasNextLine()) {
+				lines.add(scanner.nextLine());
 			}
 			scanner.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 
-		char[] characters = str.toString().toCharArray();
-		int[] numbers = new int[characters.length];
-		for (int i = 0; i < characters.length; i++) {
-			numbers[i] = characters[i] - 48;
+		// Transform into a 2D array of ints
+		int[][] rows = new int[lines.size()][];
+		for (int i = 0; i < lines.size(); i++) {
+			String[] numStrings = lines.get(i).replaceAll("\n","").split("\t");
+			rows[i] = new int[numStrings.length];
+			for (int j = 0; j < numStrings.length; j++) {
+				rows[i][j] = Integer.parseInt(numStrings[j]);
+			}
 		}
-		System.out.println("Part one: "+Day1.partOne(numbers));
-		System.out.println("Part two: "+Day1.partTwo(numbers));
+
+		System.out.println("Part one: "+Day2.partOne(rows));
+		System.out.println("Part two: "+Day2.partTwo(rows));
 	}
 
 
